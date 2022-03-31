@@ -7,10 +7,9 @@ public class ChatbotChallenge{
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Hello. What is your name?");
-        //Pick up user's name and store it. 
         String name = scan.nextLine();
-
-                           
+        //Pick up user's name and store it. 
+       
         //add new a line before asking next question. 
         // scan.nextLine();
         System.out.println("\n");
