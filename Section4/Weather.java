@@ -16,6 +16,7 @@ public class Weather{
 
     public static double fahrenheitToCelsius(double fahrenheit){
         // System.out.println((fahrenheit - 32) * (5/9));
+        // System.out.println((double)(5/9));
         return (fahrenheit - 32) * 5 / 9;
     }
 
