@@ -40,11 +40,7 @@ public class Main{
     
             
         }
-        System.out.println("Name: " + person.getName() + "\n" + 
-"Nationality: " + person.getNationality() + "\n" + 
-"Date of Birth: " + person.getYear() + "\n" +
-"Seat Number: " + person.getSeatNumber() + "\n" + "Passport: " +
- Arrays.toString(person.getPassport()) + "\n");
+        System.out.println(person.toString());
 
         Person personOne = new Person(person);
         personOne.chooseSeat();

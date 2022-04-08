@@ -31,5 +31,9 @@ public class Main{
         System.out.println(Arrays.toString(nissanOne.getParts()));
 
         // System.out.println(nissanOne.getParts());
+
+        System.out.println(nissan.toString());
+        System.out.println(nissanOne.toString());
+        System.out.println(dodge.toString());
     }
 } 
