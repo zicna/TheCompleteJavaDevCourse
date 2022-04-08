@@ -64,13 +64,13 @@ public class Car{
         System.out.println("You bought the beautiful " + this.year + " "+ this.make);
     }
 
-    // public String toString(){
-    //     return "Make " + this.make + ".\n"
-    //     + "Price " + this.price + ". \n" 
-    //     + "Year " + this.year + ".\n"
-    //     + "Color " + this.color + ".\n"
-    //     + "Parts " + Arrays.toString(this.parts) + "\n";
+    public String toString(){
+        return "Make " + this.make + ".\n"
+        + "Price " + this.price + ". \n" 
+        + "Year " + this.year + ".\n"
+        + "Color " + this.color + ".\n"
+        + "Parts " + Arrays.toString(this.parts) + "\n";
 
-    // }
+    }
 }
 

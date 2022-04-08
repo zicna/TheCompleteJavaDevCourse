@@ -1,57 +1,30 @@
 import java.util.Arrays;
 
 public class Main{
-    // public static void main(String[] args) {
-    //     Person person = new Person("Rayan S","Canadian", "1/1/11", 5);
-    //     // person.passport = new String[]{person.name, person.nationality, person.year};
-
-    //     Person person2 = new Person(person);
-
-    //     person2.setSeatNumber(11);
-    //     person2.setName("Brayan S");
-
-    //     person.chooseSeat();;
-    //     System.out.println(person.getName());
-    //     System.out.println(person.getNationality());
-    //     System.out.println(person.getYear());
-    //     System.out.println(person.getSeatNumber());
-        
-    //     if(person.applyPassport()){
-    //         System.out.println("Congratulations "+person.getName()+". Your passport was approved!");
-    //     }else{
-    //         System.out.println("We're sorry "+person.getName()+". We cannot process your application.");
-
-    //     }
-
-    //     System.out.println(person2.getName());
-    //     System.out.println(person2.getNationality());
-    //     System.out.println(person2.getYear());
-    //     System.out.println(person2.getSeatNumber());
-
-        
-    // }
 
     public static void main(String[] args) {
+        Person[] people = new Person[] { new Person("Cleopatra", "Egypt", "69 BC", 1),
+        new Person("Alexander the Great", "Macedon", "356 BC", 2),
+        new Person("Julius Caesar", "Rome", "100 BC", 3),
+        new Person("Hannibal", "Carthage", "247 BC", 4),
+        new Person("Confucius", "China", "551 BC", 5),
+        new Person("Pericles", "Greece", "429 BC", 6),
+        new Person("Spartacus", "Thrace", "111 BC", 7),
+        new Person("Marcus Aurelius", "Rome", "121 AD", 8),
+        new Person("Leonidas", "Greece", "540 BC", 9),
+        new Person("Sun Tzu", "China", "544 BC", 10),
+        new Person("Hammurabi", "Babylon", "1750 BC", 11),
+        };
+        Airline airline = new Airline();
 
-        Person person = new Person("Milan Zivkociv", "Serbian", "9/25/1987", 10); 
-        if (person.applyPassport() == true) {
-
-            person.setPassport(new String[] {person.getName(), person.getNationality(), person.getYear()});
-    
-            
+        for (int i = 0; i < people.length; i++) {
+            airline.setPerson(people[i], i);
         }
-        System.out.println(person.toString());
 
-        Person personOne = new Person(person);
-        personOne.chooseSeat();
-        personOne.setName("Ivan ZIvkovic");
-        personOne.setPassport(new String[]{personOne.getName(), personOne.getNationality(), personOne.getYear()});
-
-        System.out.println("Name: " + personOne.getName() + "\n" + 
-    "Nationality: " + personOne.getNationality() + "\n" + 
-    "Date of Birth: " + personOne.getYear() + "\n" +
-    "Seat Number: " + personOne.getSeatNumber() + "\n" + "Passport: " +
-     Arrays.toString(personOne.getPassport()) + "\n");
-
+        System.out.println(airline.getPerson(1));
+        System.out.println(airline.getPerson(10));
+        System.out.println(airline.getPerson(7));
+        System.out.println(airline.getPerson(5));
      }
+
 }
