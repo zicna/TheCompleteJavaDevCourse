@@ -20,4 +20,35 @@ public class Dealership{
         return new Car(this.cars[index]);
     }
 
+    public void sell(int index){
+        this.cars[index].drive();
+        this.cars[index] = null;
+    }
+
+    public String search(String make, int budget){
+        for (int i = 0; i < this.cars.length; i++) {
+            if(this.cars[i] == null){
+                continue;
+            }else if(make.equals(this.cars[i].getMake()) && this.cars[i].getPrice() <= budget){
+                return "we found one one spot " + i + "\n" + this.cars[i].toString();
+            }
+        }
+        return "Sorry, we can't find any";
+
+    }
+
+    public String toString(){
+        String temp = "";
+        for (int i = 0; i < this.cars.length; i++) {
+            temp += "Parking spots " + i + "\n";
+            if(this.cars[i] == null){
+                temp += "Empty for that spot";
+            }else{
+                temp += this.cars[i].toString() + "\n";
+            }
+        }
+
+        return temp;
+    }
+
 }

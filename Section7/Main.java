@@ -8,7 +8,7 @@ public class Main{
         Car[] cars = new Car[]{
             new Car("Nissan", 5000, 2022, "red", parts),
             new Car("Dodge", 8500, 2019, "blue", parts),
-            new Car("Nissan", 5000, 2022, "red", new String[]{"tires", "filter"})
+            new Car("Nissan", 5000, 2017, "red", new String[]{"tires", "filter"})
         };
         // Car nissan = new Car("Nissan", 5000, 2022, "red", parts);
         // Car dodge = new Car("Dodge", 8500, 2019, "blue", parts);
@@ -20,6 +20,10 @@ public class Main{
             dealership.setCar(cars[i], i);
         }
 
-        System.out.println(dealership.getCar(0));
+        dealership.sell(2);
+        // dealership.search("dodge", 1000);
+        System.out.println(dealership.search("Dodge", 9000));
+
+        System.out.println(dealership);
     }
 } 
