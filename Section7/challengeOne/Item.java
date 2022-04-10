@@ -4,17 +4,19 @@ public class Item{
     private double price;
     private int quantity;
 
-    Item(String name, double price, int quantity){
+    public Item(String name, double price, int quantity){
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
-    Item(Item source){
+    public Item(Item source){
         this.name= source.name;
         this.price = source.price;
         this.quantity = source.quantity;
     }
+
+
 
     public void setName(String name){
         this.name = name;
