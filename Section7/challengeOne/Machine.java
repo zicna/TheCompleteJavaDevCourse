@@ -25,4 +25,16 @@ public class Machine{
     public void setItem(Item item, int row, int spot){
         this.items[row][spot] = new Item(item);
     }
+
+    public String toString(){
+        String result = "";
+        for (int i = 0; i < this.items.length; i++) {
+            for (int j = 0; j < items[i].length; j++) {
+                result += (this.items[i][j].toString() + " "); 
+            }
+            result += "\n";
+        }
+        result += "***************************************************";
+    return result;
+    }
 }

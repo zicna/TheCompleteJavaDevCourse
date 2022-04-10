@@ -25,10 +25,10 @@ public class Main{
         System.out.println(machineOne.getItem(0, 0));
         
         
-        System.out.println("\t*****************************************");
+        System.out.println("***************************************************");
         System.out.println("\t WELCOME TO JAVA DRINKS!");
-        System.out.println("\t*****************************************");
-        
-        
+        System.out.println("***************************************************");
+        System.out.println(machineOne.toString()); 
+
     }
 }
