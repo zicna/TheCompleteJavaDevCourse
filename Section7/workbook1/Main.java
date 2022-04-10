@@ -19,12 +19,9 @@ public class Main{
 
         for (int i = 0; i < people.length; i++) {
             airline.setPerson(people[i], i);
+            airline.createReservation(airline.seats[i]);
         }
 
-        System.out.println(airline.getPerson(1));
-        System.out.println(airline.getPerson(10));
-        System.out.println(airline.getPerson(7));
-        System.out.println(airline.getPerson(5));
      }
 
 }

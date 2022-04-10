@@ -10,7 +10,11 @@ public class Airline{
     }
     
     public void setPerson(Person person, int index){
-        this.seats[index] = new Person(person);
+        this.seats[person.getSeatNumber() -1] = new Person(person);
+    }
+
+    public void createReservation(Person person){
+        System.out.println("Thank you " + person.getName() + " for flying with Java airlines. Your seat number is " + person.getSeatNumber() + ". \n");
     }
 
 
