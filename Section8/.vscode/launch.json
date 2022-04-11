@@ -4,17 +4,18 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "ReadingFiles"
         },
         {
             "type": "java",
             "name": "Launch Breakpoints",
             "request": "launch",
-            "mainClass": "Breakpoints",
+            "mainClass": "ReadingFiles",
             "projectName": "Section8_de6036ea"
         }
     ]
