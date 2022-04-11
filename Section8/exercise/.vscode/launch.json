@@ -16,6 +16,13 @@
             "request": "launch",
             "mainClass": "Functions",
             "projectName": "exercise_c9bf535d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pyramid",
+            "request": "launch",
+            "mainClass": "Pyramid",
+            "projectName": "exercise_c9bf535d"
         }
     ]
 }
