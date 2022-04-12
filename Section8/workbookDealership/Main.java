@@ -36,6 +36,7 @@ public class Main{
                 continue;
             }else if(dealership.getCar(spot) == null){
                 System.out.println("Empty spot");
+                continue;
             }
             dealership.sell(spot);    
             System.out.print("Type 'yes' to continue shopping: ");
