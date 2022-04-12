@@ -22,6 +22,9 @@ public class Machine{
     }
 
     public void dispense(int row, int spot) {
+        if(items[row][spot].getQuantity() == 0){
+            throw new IllegalStateException("cannot dispanse an item with quantity of zero");
+        }
         items[row][spot].setQuantity(items[row][spot].getQuantity() - 1);
     }
 
