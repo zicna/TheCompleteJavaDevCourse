@@ -1,4 +1,5 @@
 import models.Contact;
+import models.ContactManager;
 
 import java.text.ParseException;
 
@@ -9,11 +10,19 @@ public class Main {
             milan.setBirthDate("09/25/1993");
             System.out.println(milan);
             
+            ContactManager cm = new ContactManager();
+            cm.addContact(new Contact("Ryan", "6135012424", "11/11/1992"));
+            cm.addContact(new Contact("Gio", "6477092344", "11/11/1993"));
+            cm.addContact(new Contact("Thomas", "8192256979", "11/11/1994"));
+            System.out.println(cm);
+            cm.removeContact("Gio");
+            System.out.println(cm);
         } catch (ParseException e) {
             System.out.println(e.getMessage());
         } finally{
             System.out.println("Progress Complete");
         }
+
 
         // System.out.println(milan);
 

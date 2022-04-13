@@ -13,6 +13,15 @@ public class Contact{
     private String phoneNumber;
 
     public Contact(String name, String phoneNumber, String birthDate) throws ParseException{
+        if(name == null || name.isBlank()){
+            throw  new IllegalArgumentException("name is null OR blank.");
+        }
+        if(phoneNumber == null || phoneNumber.isBlank()){
+            throw new IllegalArgumentException("phoneNumber is null OR blank.");
+        }
+        if(phoneNumber.length() < 5){
+            throw new IllegalArgumentException("phoneNumber length is less than 5.");
+        }
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.birthDate = birthDate;
@@ -32,6 +41,9 @@ public class Contact{
     }
 
     public void setName(String name) {
+        if(name == null || name.isBlank()){
+            throw  new IllegalArgumentException("name is null OR blank.");
+        }
         this.name = name;
     }
 
@@ -40,6 +52,12 @@ public class Contact{
     }
 
     public void setPhoneNumber(String phoneNumber) {
+        if(phoneNumber == null || phoneNumber.isBlank()){
+            throw new IllegalArgumentException("phone number is null OR blank.");
+        }
+        if(phoneNumber.length() < 5){
+            throw new IllegalArgumentException("phone number length is less than 5.");
+        }
         this.phoneNumber = phoneNumber;
     }
 
