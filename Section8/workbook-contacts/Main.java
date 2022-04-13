@@ -5,7 +5,8 @@ import java.text.ParseException;
 public class Main {
     public static void main(String[] args){
         try {
-            Contact milan = new Contact("Milan", "614-400-4944", "0937737/25/1987");
+            Contact milan = new Contact("Milan", "614-400-4944", "09/25/1987");
+            milan.setBirthDate("09/25/1993");
             System.out.println(milan);
             
         } catch (ParseException e) {
@@ -13,6 +14,8 @@ public class Main {
         } finally{
             System.out.println("Progress Complete");
         }
+
+        // System.out.println(milan);
 
 
     }
