@@ -1,8 +1,20 @@
+import models.Contact;
+
+import java.text.ParseException;
+
 public class Main {
-    public static void main(String[] args) {
-        
-      
-        
+    public static void main(String[] args){
+        try {
+            Contact milan = new Contact("Milan", "614-400-4944", "0937737/25/1987");
+            System.out.println(milan);
+            
+        } catch (ParseException e) {
+            System.out.println(e.getMessage());
+        } finally{
+            System.out.println("Progress Complete");
+        }
+
+
     }
 
     /**
