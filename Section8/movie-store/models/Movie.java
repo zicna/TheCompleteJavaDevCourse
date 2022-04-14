@@ -14,6 +14,18 @@ public class Movie{
     private double rentalPrice;
 
     public Movie(String name, String format, double rating){
+        if(name == null || name.isBlank()){
+            throw new IllegalArgumentException("name cannot be null or blank");
+        }
+        if(! (format.equalsIgnoreCase("Blue-Ray") || format.equalsIgnoreCase("DVD"))){
+            throw new IllegalArgumentException("format must be 'Blue-Ray' or 'DVD'");
+        }
+        if(format == null || format.isBlank()){
+            throw new IllegalArgumentException("format cannot be null or blank");
+        }
+        if(rating < 0 || rating > 10){
+            throw new IllegalArgumentException("rating must be btween 0 and 10");
+        }
         this.name = name;
         this.format = format;
         this.rating = rating;
@@ -44,13 +56,25 @@ public class Movie{
     }
 
     public void setName(String name) {
+        if(name == null || name.isBlank()){
+            throw new IllegalArgumentException("name cannot be null or blank");
+        }
         this.name = name;
     }
 
     public void setFormat(String format) {
+        if(format == null || format.isBlank()){
+            throw new IllegalArgumentException("format must be 'Blue-Ray' or 'DVD'");
+        }
+        if(!format.equalsIgnoreCase("Blue-Ray") || !format.equalsIgnoreCase("DVD")){
+            throw new IllegalArgumentException("format must be 'Blue-Ray' or 'DVD'");
+        }
         this.format = format;
 
     }public void setRating(double rating) {
+        if(rating < 0 || rating > 10){
+            throw new IllegalArgumentException("rating must be btween 0 and 10");
+        }
         this.rating = rating;
     }
 

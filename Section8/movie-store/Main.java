@@ -7,6 +7,8 @@ public class Main {
 
         Movie theShawshankRedemption = new Movie("The Shawshank Redemption", "Blue-Ray", 9.2);
         System.out.println(theShawshankRedemption);
+
+
     }
 
     /**
