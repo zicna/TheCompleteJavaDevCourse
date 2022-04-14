@@ -70,6 +70,8 @@ public class Movie{
             throw new IllegalArgumentException("format must be 'Blue-Ray' or 'DVD'");
         }
         this.format = format;
+        this.sallingPrice = setSellingPrice();
+        this.rentalPrice = setRentalPrice();
 
     }public void setRating(double rating) {
         if(rating < 0 || rating > 10){
@@ -80,6 +82,10 @@ public class Movie{
 
     public boolean isAvailable() {
         return isAvailable;
+    }
+
+    public void setIsAvaiable(boolean bool){
+        this.isAvailable = bool;
     }
 
     private double setSellingPrice(){
