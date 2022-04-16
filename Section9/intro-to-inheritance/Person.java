@@ -14,36 +14,58 @@ public class Person{
         this.age = source.age;
     }
 
+
+    public Person() {
+    }
+
     public String getName() {
-        return name;
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
-        return age;
+        return this.age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Person name(String name) {
+        setName(name);
+        return this;
+    }
+
+    public Person age(int age) {
+        setAge(age);
+        return this;
     }
 
     @Override
-    public boolean equals(Object obj){
-        if(obj == null){
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Person)) {
             return false;
         }
-        if(!(obj instanceof Person)){
-            return false;
-        }
-
-        Person person = (Person)obj;
-
-        return this.getName().equals(person.getName()) && this.getAge() == person.getAge();
+        Person person = (Person) o;
+        return Objects.equals(name, person.name) && age == person.age;
     }
 
     @Override
-    public int hashCode(){
-        return Objects.hash(this.age, this.name);
+    public int hashCode() {
+        return Objects.hash(name, age);
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
+        return "{" +
+            " name='" + getName() + "'" +
+            ", age='" + getAge() + "'" +
+            "}";
     }
+    
 }
