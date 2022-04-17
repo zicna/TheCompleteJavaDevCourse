@@ -19,6 +19,11 @@ public class Pants extends Product{
     }
 
     @Override
+    public void fold() {
+        System.out.println(".....");
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if(obj == null){
             return false;

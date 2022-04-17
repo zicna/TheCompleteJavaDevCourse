@@ -42,5 +42,7 @@ public abstract class Product{
         this.brand = brand;
     }
 
+    public abstract void fold();
+
     
 }
