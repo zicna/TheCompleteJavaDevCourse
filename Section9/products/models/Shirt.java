@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class Shirt extends Product{
     private String size;
 
@@ -19,6 +21,29 @@ public class Shirt extends Product{
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null){
+            return false;
+        }
+
+        if(!(obj instanceof Shirt)){
+            return false;
+        }
+
+        Shirt shirt = (Shirt)obj;
+
+        return this.getSize().equals(shirt.getSize()) && 
+                super.getBrand().equals(shirt.getBrand()) &&
+                super.getColor().equals(shirt.getColor()) &&
+                super.getPrice() == shirt.getPrice();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.getSize(), super.getBrand(), super.getColor(), super.getPrice() );
     }
 
 

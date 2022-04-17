@@ -14,6 +14,8 @@ public class Main {
 
         Product pants = new Pants(32, 129.99, "INDIGO", "VERSACE");
 
+    System.out.println(product.equals(productOne));
+
     }
   
     /**
