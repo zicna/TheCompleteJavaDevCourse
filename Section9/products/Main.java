@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Shirt product = new Shirt("SMALL", 19.99,  "RED", "NIKE");
+        Shirt product = new Shirt(Shirt.Size.SMALL, 19.99,  "RED", "NIKE");
 
         Shirt productOne = new Shirt(product);
 
