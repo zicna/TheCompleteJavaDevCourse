@@ -2,7 +2,7 @@ package models;
 
 import java.util.Objects;
 
-public class Shirt extends Product{
+public class Shirt extends Product {
     public enum Size{
         SMALL, MEDIUM, LARGE
     }
@@ -54,5 +54,6 @@ public class Shirt extends Product{
         return Objects.hash(this.getSize(), super.getBrand(), super.getColor(), super.getPrice() );
     }
 
+    
 
 }
