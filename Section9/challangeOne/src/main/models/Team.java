@@ -1,4 +1,4 @@
-package models;
+package main.models;
 import java.util.Arrays;
 
 public class Team {
@@ -24,13 +24,16 @@ Question: the constants are final, so why can't we make them public? It's not po
             throw new IllegalArgumentException("House cannot be null or empty.");
         }
         if(keeper == null || keeper.equals("")){
-            throw new IllegalArgumentException("House cannot be null or empty.");
+            throw new IllegalArgumentException("Keeper cannot be null or empty.");
         }
         if(seeker == null || seeker.equals("")){
-            throw new IllegalArgumentException("House cannot be null or empty.");
+            throw new IllegalArgumentException("Seeker cannot be null or empty.");
         }
         if(chasers.length != 3){
-            throw new IllegalArgumentException("House cannot be null or empty.");
+            throw new IllegalArgumentException("Chasers must have three members.");
+        }
+        if(Team.hasNull(chasers) || Team.hasBlank(chasers)){
+            throw new IllegalArgumentException("Chasers memebers cannot be null or empty.");
         }
         this.house = house;
         this.keeper = keeper;
@@ -59,18 +62,24 @@ Question: the constants are final, so why can't we make them public? It's not po
     }
 
     public void setHouse(String house) {
+        checkParam(house);
         this.house = house;
     }
 
     public void setKeeper(String keeper) {
+        checkParam(keeper);
         this.keeper = keeper;
     }
 
     public void setSeeker(String seeker) {
+        checkParam(seeker);
         this.seeker = seeker;
     }
 
     public void setChasers(String[] chasers) {
+        if(Team.hasBlank(chasers) || Team.hasBlank(chasers) || chasers.length != 3){
+            throw new IllegalArgumentException("Illegal chaser argument.");
+        }
         this.chasers = chasers;
     }
 
@@ -82,9 +91,21 @@ Question: the constants are final, so why can't we make them public? It's not po
         "Chasers: " + Arrays.toString(this.chasers) + "\n"; 
     }
 
+    public static boolean hasNull(String[] array){
+        return Arrays.stream(array)
+        .anyMatch(string -> string ==null);
+    }
 
+    public static boolean hasBlank(String[] array){
+       return Arrays.stream(array)
+       .anyMatch(item -> item.trim().equals(""));
+    }
 
-
+    public void checkParam(String param){
+        if(param == null || param.trim().equals("")){
+            throw new IllegalArgumentException(param + " cannot be blank or null");
+        }
+    }
     
      public static String getPositionChaser() {
          return POSITION_CHASER;
