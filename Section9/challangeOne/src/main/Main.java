@@ -1,18 +1,21 @@
-// package main;
-import models.Game;
-import models.Team;
+package main;
+import main.models.Game;
+import main.models.Team;
 
 public class Main {
 
     static Game game;
 
     public static void main(String[] args) {
-        Team teamOne = new Team("GRYFFINDOR", "Oliver", "Harry", new String[] {"Angelina", "Ginny", "Katie"});
-        
-        Team teamTwo =new Team("SLYTHERIN", "Vincent",  "Draco", new String[] {"Bridget", "Harper", "Malcolm"});
-        System.out.println(teamOne);
-        System.out.println(teamTwo);
+        Team home = new Team("GRYFFINDOR", "Oliver", "Harry", new String[] {"Angelina", "Ginny", "Katie"});
+  
+        Team away = new Team("SLYTHERIN", "Vincent",  "Draco", new String[] {"Bridget", "Harper", "Malcolm"});
 
+        Game gameOne = new Game(home, away);
+
+        Integer score = gameOne.getScore(home);
+
+        gameOne.setScore(home, 50);
     }
 
 
