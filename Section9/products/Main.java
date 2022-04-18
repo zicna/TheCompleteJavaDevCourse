@@ -12,9 +12,12 @@ public class Main {
 
         Shirt productOne = new Shirt(product);
 
-        Product pants = new Pants(32, 129.99, "INDIGO", "VERSACE");
+        Pants pants = new Pants(32, 129.99, "INDIGO", "VERSACE");
 
-    System.out.println(product.equals(productOne));
+        System.out.println(product.equals(productOne));
+        pants.discount();
+        System.out.println(pants);
+    
 
     }
   
