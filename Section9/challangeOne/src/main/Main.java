@@ -1,13 +1,18 @@
-package src.main;
-import src.main.models.Game;
+// package main;
+import models.Game;
+import models.Team;
 
 public class Main {
 
     static Game game;
 
     public static void main(String[] args) {
-
+        Team teamOne = new Team("GRYFFINDOR", "Oliver", "Harry", new String[] {"Angelina", "Ginny", "Katie"});
         
+        Team teamTwo =new Team("SLYTHERIN", "Vincent",  "Draco", new String[] {"Bridget", "Harper", "Malcolm"});
+        System.out.println(teamOne);
+        System.out.println(teamTwo);
+
     }
 
 
