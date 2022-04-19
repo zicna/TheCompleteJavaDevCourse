@@ -1,4 +1,5 @@
 package main;
+
 import main.models.Game;
 import main.models.Team;
 
@@ -13,9 +14,10 @@ public class Main {
 
         Game gameOne = new Game(home, away);
 
-        Integer score = gameOne.getScore(home);
-
         gameOne.setScore(home, 50);
+
+        System.out.println(gameOne.getTeam("GRYFFINDOR"));
+        System.out.println(Game.getGameCount());
     }
 
 
