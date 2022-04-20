@@ -1,3 +1,4 @@
+package LinkedInQuestions;
 public class Berries{
     String berry = "blue";
 

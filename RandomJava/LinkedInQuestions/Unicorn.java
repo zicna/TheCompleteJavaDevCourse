@@ -1,3 +1,4 @@
+package LinkedInQuestions;
 class Unicorn{
     String name;
     // public Unicorn(){
