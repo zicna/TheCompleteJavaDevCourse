@@ -3,7 +3,10 @@ import java.util.ArrayList;
 public class ParameterizedCollections {
 
     public static void main(String[] args) {
+        // * option One
         ArrayList<Integer> numbers = new ArrayList<Integer>();
+        // * option two
+        // ArrayList<Integer> numbers = new ArrayList<>();
 
         numbers.add(1);
         numbers.add(2);
