@@ -18,8 +18,8 @@ public class  Animal{
         this.age = source.age;
     }
 
-    public void voice(String sound){
-        System.out.println("Animal says: " + sound);
+    public void voice(){
+        System.out.println("Animal says: something");
     };
     // *GETTERS
     public String getName() {

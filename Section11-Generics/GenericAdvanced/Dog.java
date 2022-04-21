@@ -1,12 +1,15 @@
 public class Dog extends Animal{
-    public Dog(String species, String familia, String name, int age){
+    String bark;
+
+    public Dog(String species, String familia, String name, int age, String bark){
         super(species, familia, name, age);
+        this.bark = bark;
     }
 
     @Override
-    public void voice(String sound) {
-        super.voice(sound);
+    public void voice() {
+        super.voice();
 
-        System.out.println("Dog says: " + sound);
+        System.out.println("Dog says: " + this.bark);
     }
 }

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Printer<T extends Animal>{
 
     T thingToPrint;
@@ -9,11 +7,7 @@ public class Printer<T extends Animal>{
     }
 
     public void print(){
-        System.out.println(thingToPrint);
+        thingToPrint.voice();
+        System.out.println(thingToPrint.getName());
     }
-    
-
-    
-    
-
 }
