@@ -1,9 +1,13 @@
-public class ConsoleColors{
+public final class ConsoleColors{
     //* usage 
     //* 1. declare variable as public static final String 
     //* 2. use unicode escape to declare colors
     //* 3. concat text with variable you want to be colored
     //* 4. concat with RESET after to prevent all text to follow to be colored the same
+    public String name;
+    public ConsoleColors(String name){
+        this.name = name;
+    }
 
     // Reset
     public static final String RESET = "\033[0m";  // Text Reset
