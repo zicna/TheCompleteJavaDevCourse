@@ -16,7 +16,13 @@ public class ParameterizedCollections {
         numbers.add(6);
         // numbers.add("Hello");   //* VS Code now shows an error
 
+        print(numbers);
+    }
 
+    public static void print(ArrayList<Integer> items){
+        for(Integer num : items){
+            System.out.println(num * 2);
+        }
     }
     
 }
