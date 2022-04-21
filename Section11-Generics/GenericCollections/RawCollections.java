@@ -17,9 +17,18 @@ public class RawCollections{
 
     public static void printFromCollection(ArrayList items){
         for (int i = 0; i < items.size(); i++) {
-            System.out.println(items.get(i));
+            System.out.println((int)items.get(i) * 2);
         }
     }
+
+    
+    public static void printRawCollection(ArrayList items){
+        for(Object number : items){
+            System.out.println((int)number * 2);
+        }
+    }
+
+
 }
 
 //* Type safety: The method add(Object) belongs to the raw type ArrayList. References to generic type ArrayList<E> should be parameterized
