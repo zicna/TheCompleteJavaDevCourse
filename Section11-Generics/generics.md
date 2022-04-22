@@ -28,6 +28,14 @@ GenericsMethod.methodname(11.11);
 ```
 
 The generic method allows us to pass any data type into a method call.
+
+*example*
+```
+<T> T[] methodName (T[] a);
+```
+- `<T>` - type of parameter will be defined at compile time
+- `T[]` - method returns parameterized type
+- `(T[] a)` - argument of method iz field parameterizzed type
 ___
 
 ## Generic classes- Parameterized types
@@ -43,6 +51,16 @@ The class declaration is the same only after class name and before curly braces 
 1. <span style="color:green"> < > </span> - angled brackets => diamond 
 2. <span style="color:green"> type parameter </span> - add inside the diamond
 3. <span style="color:green"> T </span> - it is a convention to use the upper letter T
+
+- T defines to the compiler that this Java class can use certain data types
+- T is unknown at the compile time
+- T gets data type once we create instance of a class
+- convenctions: 
+  1. `<T>` - type
+  2. `<E>` - element
+  3. `<K>` - key
+  4. `<V>` - value
+
 
 
 
@@ -131,6 +149,20 @@ public class Printer<T extends Animal>{
 
 ```
 We can call methods on T because T must extend Animal therefore it must have methods inherited from Animal
+
+___
+## Wilcard 
+There is no inheritance of parameterized types 
+**example **
+```
+
+private static void processDate(List<?> data){
+	// some code
+}
+```
+
+Using the wildcard (<?>) we define that at this moment data type is unknown but whenever we use this method data type will be known and compiling will be with no errors => no need for casting
+
 
 
 
