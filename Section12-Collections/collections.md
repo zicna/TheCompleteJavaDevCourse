@@ -162,7 +162,9 @@ Has two references: one to the next node and another to the previous node
 
 ![Singly and Doubly LinkedList](images/LinkedList.jpeg)
 <p align="center"> Singly and Doubly LinkedList </p>
+
 **LinkedList source:**
+
 ```java
 public class LinkedList<E> 
 extends AbstractSequentialList<E>
