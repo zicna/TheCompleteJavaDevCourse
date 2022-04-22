@@ -1,9 +1,13 @@
 import java.util.HashSet;
+import java.util.TreeSet;
 import java.util.Iterator;
 
 public class SetDemo{
     public static void main(String[] args) {
-        HashSet<String> set = new HashSet<>();
+
+        // HashSet<String> set = new HashSet<>();
+        TreeSet<String> set = new TreeSet<>();
+        // ! here data is unorderd but alphabeticaly sorted
 
         set.add("John");
         set.add("John");
