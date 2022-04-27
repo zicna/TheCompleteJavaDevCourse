@@ -49,7 +49,7 @@ Instead of:
 
 1. passing an object as an argument to a function
 2. call the method of the object passed
-3. 
+   
 We do:
 1. pass an implementation of that method directly as an argument in the function. 
 
