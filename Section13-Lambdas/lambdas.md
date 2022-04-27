@@ -6,36 +6,44 @@ ___
 
 ## Lambdas and functional programming
 
-The downside of OOP-object with fields that can be altered with methods is prone to errors and hard to debug. 
-The upside of functions - takes one (or more args) to generate another value without changing entered values. No matter how many times we perform this function with the same arguments it will produce the same results.
+**The downside of OOP-**
+
+- object with fields that can be altered with methods is prone to errors and hard to debug. 
+
+**The upside of functions**
+
+- takes value (s) as arguments to generate another value without changing entered values. 
+- No matter how many times we perform this function with the same arguments it will produce the same results.
 
 In functional languages (`Ruby`, `JavaScript`, `Scala`, `Closure`) we can do: 
-1. Assign function to a value- function expression
-2. Pass function as an argument to another function- callback function
-3. Define function inside another function- function scope
-4. Return function from another function call
+1. Assign function to a value- `function expression`
+2. Pass function as an argument to another function- `callback function`
+3. Define function inside another function- `function scope`
+4. `Return function` from another function call
 
 In `JavaScript`, functions are first-class objects.
-Pure functions - with the same arguments always return the same result and the application of a function has no side effects. 
+
+`Pure functions` - with the same arguments always return the same result and the application of a function has no side effects. 
 
 ___
 ## Lambda expression
 
-Lambdas are **anonymus function** that can:
+Lambdas are **anonymus function** that can be:
 1. assign to variable 
-2. pass an argument to another function (since Java 8 version)
+2. pass as an argument to another function (since Java 8 version)
 3. return from method
 
 
-Lambdas in Java can be used only with certain types of interfaces- functional interfaces.
+Lambdas in Java can be used only with certain types of interfaces- `functional interfaces`.
 
-Functional Interface in Java is an interface that only contains one abstract method. In addition to this one abstract method, the functional interface can contain default and static method which do have implementation along with abstract one that does NOT have implementation. 
+**Functional Interface** in Java is an interface that only contains one abstract method. In addition to this `one abstract method`, the functional interface `can contain default and static method` which do have implementation along with abstract one that does NOT have implementation. 
 
 We can add annotation `@FunctionalInterface` above (not obligatory but it is considered best practice). And the compiler will enforce that we have exactly one abstract method.
 
 If we want to implement lambdas with interfaces with more than one abstract method we would need to use the `Anonymus class`. 
 
-
+___
+## Usage
 
 Instead of:
 
