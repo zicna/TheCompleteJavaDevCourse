@@ -56,9 +56,9 @@ We do:
 
 When we pass lambdas into function as arguments:
 
-1. access level is not needed (public, private, protected)
-2. the name of the method is not needed
-3. the return type is not needed (the compiler will figure it out automatically)
+1. access level is not needed (`public, private, protected`)
+2. the name of the method is not needed- `anonymus functions`
+3. the return type is not needed (the compiler will figure it out automatically)- since functional interface can only have one abstract method
 4. we add an arrow operator (->),  after ()
 
 
