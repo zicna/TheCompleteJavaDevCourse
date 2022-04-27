@@ -69,7 +69,7 @@ ___
 **Parentheses:**
 
 1. if we have only one parameter we can omit parentheses 
-2. if we have no parameters or more than one we need parentheses
+2. if we have no parameters or two and more we need parentheses
    
 **One line lambdas: (one line implementation)**
 
