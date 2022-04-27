@@ -74,6 +74,6 @@ ___
 **One line lambdas: (one line implementation)**
 
 1. omit curly braces 
-2. omit return keyword (even if we have return value)
+2. omit return keyword (even if we have return value in interface where we define method)
 3. put everything in the same line 
 
