@@ -1,4 +1,6 @@
 # Lambdas
+Lambdas are shortcuts to defining the implementation of an abstract method from a functional interface. 
+___
 the easiest to use is with other files in the same folder 
 ___
 
@@ -29,6 +31,12 @@ Lambdas in Java can be used only with certain types of interfaces- functional in
 
 Functional Interface in Java is an interface that only contains one abstract method. In addition to this one abstract method, the functional interface can contain default and static method which do have implementation along with abstract one that does NOT have implementation. 
 
+We can add annotation `@FunctionalInterface` above (not obligatory but it is considered best practice). And the compiler will enforce that we have exactly one abstract method.
+
+If we want to implement lambdas with interfaces with more than one abstract method we would need to use the `Anonymus class`. 
+
+
+
 Instead of:
 
 1. passing an object as an argument to a function
@@ -55,9 +63,9 @@ ___
 1. if we have only one parameter we can omit parentheses 
 2. if we have no parameters or more than one we need parentheses
    
-**One line lambdas:**
+**One line lambdas: (one line implementation)**
 
 1. omit curly braces 
-2. omit return keyword 
+2. omit return keyword (even if we have return value)
 3. put everything in the same line 
 
