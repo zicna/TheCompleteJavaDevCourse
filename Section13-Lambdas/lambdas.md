@@ -47,3 +47,17 @@ When we pass lambdas into function as arguments:
 
 
 Since we pass the implementation of a method as an object in the function we can assign that method to a variable as we would do with any other object. (`file Main.java; lines: 18. and 22.`)
+___
+## Short the lambda
+
+**Parentheses:**
+
+1. if we have only one parameter we can omit parentheses 
+2. if we have no parameters or more than one we need parentheses
+   
+**One line lambdas:**
+
+1. omit curly braces 
+2. omit return keyword 
+3. put everything in the same line 
+
