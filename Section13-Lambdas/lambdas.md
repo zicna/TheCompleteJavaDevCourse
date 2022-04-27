@@ -1,7 +1,7 @@
 # Lambdas
 Lambdas are shortcuts to defining the implementation of an abstract method from a functional interface. 
 ___
-the easiest to use is with other files in the same folder 
+use with other files in this folder 
 ___
 
 ## Lambdas and functional programming
