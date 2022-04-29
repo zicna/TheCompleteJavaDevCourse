@@ -1,10 +1,10 @@
+package byte_streams;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main{
     public static void main(String[] args) {
-        try (FileInputStream myFile = new FileInputStream("numbers.dat")){
+        try (FileInputStream myFile = new FileInputStream("byte_streams/numbers.dat")){
 
             boolean control = false;
 
