@@ -20,26 +20,33 @@ public class Main {
             Thread threadThree = new Thread(() -> average(path, "Office Supplies"));
             Thread threadFor = new Thread(() -> totalAverage(path));
 
+            // *System.out.println(threadOne.getState());
+            threadOne.start();
+            // *System.out.println(threadOne.getState());
+            // *threadOne.interrupt();
             
-            // double avgFur = average(path, "Furniture");
-            // System.out.println(avgFur);
-            // double avgTech = average(path, "Technology");
-            // System.out.println(avgTech);
-            // double avgOff = average(path, "Office Supplies");
-            // System.out.println(avgOff);
-            // double avgTotal = totalAverage(path);
-            // System.out.println(avgTotal);
+            threadTwo.start();
+            
+            threadThree.start();
+            
+            threadFor.start();
+            
+            // *Thread.sleep(100);
+            // *System.out.println(threadOne.getState());
 
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Please enter your name to access the Global Superstore dataset: ");
-            String name = scan.nextLine();
-            System.out.println("Access denied ...");
-            scan.close();
+
+            // Scanner scan = new Scanner(System.in);
+            // System.out.println("Please enter your name to access the Global Superstore dataset: ");
+            // String name = scan.nextLine();
+            // System.out.println("Access denied ...");
+            // scan.close();
 
             
         } catch (URISyntaxException e) {
             System.out.println(e.getMessage());
-        } 
+        } catch (InterruptedException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     /**
@@ -59,6 +66,9 @@ public class Main {
      */
 
      public static Double average(Path path, String category) {
+        //  if(Thread.currentThread().isInterrupted()){
+        //      return 0.0;
+        //  }
          try {
              
              return Files.lines(path)
