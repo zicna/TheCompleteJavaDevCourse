@@ -1,3 +1,4 @@
+package multithread_by_john;
 public class Multithreading {
     public static void main(String[] args) {
 

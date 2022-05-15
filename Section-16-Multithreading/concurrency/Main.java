@@ -10,15 +10,21 @@ public class Main {
 
     static final String SALES = "data/sales.csv"; //Use backslash Windows users
 
+    static double furnitureSales;
+
+    static double technologySales;
+    static double officeSupplies;
+    static double totalAverage;
     public static void main(String[] args) {
         
         try {
             Path path = Paths.get(Thread.currentThread().getContextClassLoader().getResource(SALES).toURI());
 
-            Thread threadOne = new Thread(()-> average(path, "Furniture"));
-            Thread threadTwo = new Thread(() -> average(path, "Technology"));
-            Thread threadThree = new Thread(() -> average(path, "Office Supplies"));
-            Thread threadFor = new Thread(() -> totalAverage(path));
+
+            Thread threadOne = new Thread(()-> furnitureSales = average(path, "Furniture"));
+            Thread threadTwo = new Thread(() -> technologySales = average(path, "Technology"));
+            Thread threadThree = new Thread(() -> officeSupplies = average(path, "Office Supplies"));
+            Thread threadFor = new Thread(() -> totalAverage = totalAverage(path));
 
             // *System.out.println(threadOne.getState());
             threadOne.start();
@@ -34,19 +40,20 @@ public class Main {
             // *Thread.sleep(100);
             // *System.out.println(threadOne.getState());
 
-
-            // Scanner scan = new Scanner(System.in);
-            // System.out.println("Please enter your name to access the Global Superstore dataset: ");
-            // String name = scan.nextLine();
-            // System.out.println("Access denied ...");
-            // scan.close();
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Please enter your name to access the Global Superstore dataset: ");
+            String name = scan.nextLine();
+            System.out.println("\nThank you " + name + ". The average sales for Global Superstore are:\n");
+            System.out.println("Average Furniture Sales: " + furnitureSales);
+            System.out.println("Average Technology Sales: " + technologySales);
+            System.out.println("Average Office Supplies Sales: " + officeSupplies);
+            System.out.println("Total Average: " + totalAverage);
+            scan.close();
 
             
         } catch (URISyntaxException e) {
             System.out.println(e.getMessage());
-        } catch (InterruptedException e){
-            System.out.println(e.getMessage());
-        }
+        } 
     }
 
     /**
