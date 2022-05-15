@@ -43,6 +43,15 @@ public class Main {
             Scanner scan = new Scanner(System.in);
             System.out.println("Please enter your name to access the Global Superstore dataset: ");
             String name = scan.nextLine();
+            
+            try{
+                threadOne.join();
+                threadTwo.join();
+                threadThree.join();
+                threadFor.join();
+            } catch(InterruptedException e ){
+                System.out.println(e.getMessage());
+            }
             System.out.println("\nThank you " + name + ". The average sales for Global Superstore are:\n");
             System.out.println("Average Furniture Sales: " + furnitureSales);
             System.out.println("Average Technology Sales: " + technologySales);
