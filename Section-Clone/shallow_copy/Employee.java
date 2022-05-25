@@ -1,10 +1,10 @@
 package shallow_copy;
 
-public class Employee{
+public class Employee implements Cloneable{
     private String name;
     private int age;
     private double salary;
-    private Company company;
+    Company company;
 
     public Employee(String name, int age, double salary, Company company){
         this.name = name;
@@ -50,6 +50,17 @@ public class Employee{
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        // TODO Auto-generated method stub
+        return super.clone();
+    }
+
+    @Override
+    public String toString() {
+        return "This is our employee \n" + "Employee name is: " + this.name + "\nEmployee age is: " + this.age + "\nEmployee salary is: " + this.salary + "\nhe works in: " + this.company.getName() + "\n";
     }
 
 
