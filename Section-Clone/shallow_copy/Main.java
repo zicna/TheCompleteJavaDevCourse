@@ -18,7 +18,7 @@ public class Main{
             // emp1.company.setName("B2");
             emp1.getCompany().setName("B2");
             System.out.println("This is employee two: " + emp1);
-            System.out.println("This is employee two: " + emp);
+            System.out.println("This is employee one: " + emp);
             
         } catch (CloneNotSupportedException e) {
             System.out.println(e.getMessage());

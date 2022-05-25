@@ -1,6 +1,6 @@
 package deep_copy;
 
-public class Company{
+public class Company implements Cloneable{
     private String name;
     private int founded;
 
@@ -27,6 +27,12 @@ public class Company{
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        // TODO Auto-generated method stub
+        return super.clone();
     }
 
     

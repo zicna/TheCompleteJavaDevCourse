@@ -1,6 +1,6 @@
 package deep_copy;
 
-public class Employee{
+public class Employee implements Cloneable{
     private String name;
     private int age;
     private double salary;
@@ -53,6 +53,13 @@ public class Employee{
     @Override
     public String toString() {
         return "This is our employee \n" + "Employee name is: " + this.name + "\nEmployee age is: " + this.age + "\nEmployee salary is: " + this.salary + "\nhe works in: " + this.company.getName() + "\n";
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Employee employee = (Employee)super.clone();
+        employee.setCompany((Company)employee.getCompany().clone());
+        return employee;
     }
 
     
