@@ -1,6 +1,6 @@
-package shallow_copy;
+package deep_copy;
 
-public class Employee implements Cloneable{
+public class Employee{
     private String name;
     private int age;
     private double salary;
@@ -10,14 +10,14 @@ public class Employee implements Cloneable{
         this.name = name;
         this.age = age;
         this.salary = salary;
-        this.company =  company;
+        this.company = company;
     }
 
     public Employee(Employee source){
         this.name = source.name;
         this.age = source.age;
         this.salary = source.salary;
-        this.company =  source.company;
+        this.company = source.company;
     }
 
     public int getAge() {
@@ -27,11 +27,9 @@ public class Employee implements Cloneable{
     public Company getCompany() {
         return company;
     }
-
     public String getName() {
         return name;
     }
-
     public double getSalary() {
         return salary;
     }
@@ -43,7 +41,7 @@ public class Employee implements Cloneable{
     public void setCompany(Company company) {
         this.company = company;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -53,15 +51,13 @@ public class Employee implements Cloneable{
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        // TODO Auto-generated method stub
-        return super.clone();
-    }
-
-    @Override
     public String toString() {
         return "This is our employee \n" + "Employee name is: " + this.name + "\nEmployee age is: " + this.age + "\nEmployee salary is: " + this.salary + "\nhe works in: " + this.company.getName() + "\n";
     }
 
+    
 
+    
+
+    
 }

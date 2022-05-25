@@ -15,7 +15,8 @@ public class Main{
             System.out.println("This is employee two: " + emp1);
             
             // ! by changing name of a company in employee clone we wre changing name of the company in employe original
-            emp1.company.setName("B2");
+            // emp1.company.setName("B2");
+            emp1.getCompany().setName("B2");
             System.out.println("This is employee two: " + emp1);
             System.out.println("This is employee two: " + emp);
             
