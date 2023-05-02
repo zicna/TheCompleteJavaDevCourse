@@ -7,12 +7,16 @@ public class SimpleJMBGValidator {
 
         Scanner scanner = new Scanner(System.in);
 
+        // * Welcome note
+        System.out.println("Welcome to JMBG validator");
+        System.out.println("please enter your JMBG");
+
         // * assign new value to jmbg through scanner
         String jmbg = scanner.nextLine();
 
         // * first validation JMBG MUST have 13 digits
         if (jmbg.length() != 13) {
-            System.out.println("JMBG you entered is NOT valid. Not enough digis provided. ");
+            System.out.println("JMBG you entered is NOT valid. JMBG must be 13 digits long.");
             System.exit(0);
         }
 
