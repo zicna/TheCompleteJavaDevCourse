@@ -2,22 +2,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class JMBGValidator {
+public class SimpleJMBGValidator {
     public static void main(String[] args) {
-        // * ****************************************
-        // ! Helpers
-        ArrayList<Integer> longMonths = new ArrayList<>(Arrays.asList(1, 3, 5, 7, 8, 10, 12));
-        ArrayList<String> monthsNames = new ArrayList<>(Arrays.asList("January", "February", "March", "April", "May",
-                "Jun", "July", "August", "September", "October", "November", "December"));
-        ArrayList<String> regions = new ArrayList<>(Arrays.asList("stranci", "Bosna i Hercegovina", "Crna Gora",
-                "Hrvatska", "Makedonija", "Slovenija", "no region", "Centralna Srbija", "AP Vojvodina", "AP Kosmet"));
-        // * ****************************************
 
         Scanner scanner = new Scanner(System.in);
 
         // * assign new value to jmbg through scanner
         String jmbg = scanner.nextLine();
 
+        // * first validation JMBG MUST have 13 digits
         if (jmbg.length() != 13) {
             System.out.println("JMBG you entered is NOT valid. Not enough digis provided. ");
             System.exit(0);
@@ -26,7 +19,7 @@ public class JMBGValidator {
         System.out.println("Thank you \n");
         System.out.println("Your JMBG is " + jmbg);
 
-        // * day variable value set step-by-step, the rest in one step
+        // * day variable value set in one set, the rest in one step
         String dayString = jmbg.substring(0, 2);
         int day = Integer.parseInt(dayString);
 
@@ -34,7 +27,7 @@ public class JMBGValidator {
         int year = Integer.parseInt(jmbg.substring(4, 7));
         int region = Integer.parseInt(jmbg.substring(7, 9));
         int sex = Integer.parseInt(jmbg.substring(9, 12));
-        int control = Integer.parseInt(jmbg.substring(12, 13));
+        int control = Integer.parseInt(jmbg.substring(12));
 
         // * pring all variable as a control
         // System.out.println(
@@ -45,7 +38,6 @@ public class JMBGValidator {
         // + "sex: " + sex + "\n"
         // + "control: " + control + "\n");
 
-        // ! days validation
         // * day must be 1 to 31
         if (day < 1 || day > 31) {
             System.out.println("Day part of your JMBG is not valid. ");
@@ -53,7 +45,7 @@ public class JMBGValidator {
             System.exit(0);
         }
         // * only "long months" can have 31 days
-        if (day > 30 && !longMonths.contains(month)) {
+        if (day > 30 && (month == 2 || month == 4 || month == 6 || month == 9 || month == 11)) {
             System.out.println("month " + month + " does NOT have 31 days");
             System.out.println("JMBG is INVALID");
             System.exit(0);
@@ -65,21 +57,37 @@ public class JMBGValidator {
             System.exit(0);
         }
 
-        // * February can have only 29 days is year is leap
+        // * February can have only 29 days if the year is leap
         if (day > 28 && month == 2 && year % 4 != 0) {
             System.out.println("February in non-leap NOT year can NOT have more than 28 days!");
             System.out.println("JMBG is INVALID");
             System.exit(0);
         }
 
-        // ! month validation
+        // * month validation
         if (month < 1 || month > 12) {
             System.out.println("mont part of JMBG is not valid");
             System.out.println("JMBG is INVALID");
             System.exit(0);
         }
+        // * region validation, region should NOT be between 60 and 69 - numbers never
+        // used
+        if (region > 59 && region < 70) {
+            System.out.println("wrong region numbers");
+            System.out.println("JMBG is INVALID");
+            System.exit(0);
 
-        // ! assigning region name by region number
+        }
+
+        // ! ********************************************
+        // ! OPTIONAL
+
+        ArrayList<String> monthsNames = new ArrayList<>(Arrays.asList("January", "February", "March", "April", "May",
+                "Jun", "July", "August", "September", "October", "November", "December"));
+        ArrayList<String> regions = new ArrayList<>(Arrays.asList("stranci", "Bosna i Hercegovina", "Crna Gora",
+                "Hrvatska", "Makedonija", "Slovenija", "no region", "Centralna Srbija", "AP Vojvodina", "AP Kosmet"));
+        // * ****************************************
+        // * assigning region name by region number
         String regionName = "";
         if (region < 10)
             regionName = regions.get(0);
@@ -102,8 +110,6 @@ public class JMBGValidator {
         if (region >= 90 && region < 100)
             regionName = regions.get(9);
 
-        System.out.println("JMBG is valid!");
-
         System.out.println(
                 "day: " + day + "\n"
                         + "month: " + monthsNames.get(month - 1) + "\n"
@@ -112,6 +118,9 @@ public class JMBGValidator {
                         + "sex: " + (sex < 500 ? "male" : "female") + "\n"
                         + "control: " + control + "\n");
 
+        // ! ********************************************
+
+        System.out.println("JMBG is valid!");
         // * Zatvaramo scaner
         scanner.close();
     }
