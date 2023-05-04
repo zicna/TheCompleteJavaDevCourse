@@ -1,11 +1,16 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class SimpleJMBGValidator {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+
+        boolean validJMBG = true;
 
         // * Welcome note
         System.out.println("Welcome to JMBG validator");
@@ -15,74 +20,81 @@ public class SimpleJMBGValidator {
         String jmbg = scanner.nextLine();
 
         // * first validation JMBG MUST have 13 digits
-        if (jmbg.length() != 13) {
-            System.out.println("JMBG you entered is NOT valid. JMBG must be 13 digits long.");
-            System.exit(0);
-        }
+        if (jmbg.length() != 13)
+            validJMBG = false;
 
         System.out.println("Thank you \n");
         System.out.println("Your JMBG is " + jmbg);
 
         // * day variable value set in one set, the rest in one step
-        String dayString = jmbg.substring(0, 2);
-        int day = Integer.parseInt(dayString);
-
+        int day = Integer.parseInt(jmbg.substring(0, 2));
         int month = Integer.parseInt(jmbg.substring(2, 4));
         int year = Integer.parseInt(jmbg.substring(4, 7));
         int region = Integer.parseInt(jmbg.substring(7, 9));
         int sex = Integer.parseInt(jmbg.substring(9, 12));
         int control = Integer.parseInt(jmbg.substring(12));
 
-        // * pring all variable as a control
-        // System.out.println(
-        // "day: " + day + "\n"
-        // + "month: " + month + "\n"
-        // + "year: " + year + "\n"
-        // + "region: " + region + "\n"
-        // + "sex: " + sex + "\n"
-        // + "control: " + control + "\n");
-
         // * day must be 1 to 31
         if (day < 1 || day > 31) {
-            System.out.println("Day part of your JMBG is not valid. ");
-            System.out.println("JMBG is INVALID");
-            System.exit(0);
+            validJMBG = false;
         }
         // * only "long months" can have 31 days
         if (day > 30 && (month == 2 || month == 4 || month == 6 || month == 9 || month == 11)) {
-            System.out.println("month " + month + " does NOT have 31 days");
-            System.out.println("JMBG is INVALID");
-            System.exit(0);
+            validJMBG = false;
         }
         // * February can have only 28 or 29 days
         if (month == 2 && day > 29) {
-            System.out.println("February can NOT have more then 29 days");
-            System.out.println("JMBG is INVALID");
-            System.exit(0);
+            validJMBG = false;
         }
 
         // * February can have only 29 days if the year is leap
         if (day > 28 && month == 2 && year % 4 != 0) {
-            System.out.println("February in non-leap NOT year can NOT have more than 28 days!");
-            System.out.println("JMBG is INVALID");
-            System.exit(0);
+            validJMBG = false;
         }
 
         // * month validation
         if (month < 1 || month > 12) {
-            System.out.println("mont part of JMBG is not valid");
-            System.out.println("JMBG is INVALID");
-            System.exit(0);
+            validJMBG = false;
         }
         // * region validation, region should NOT be between 60 and 69 - numbers never
         // used
         if (region > 59 && region < 70) {
-            System.out.println("wrong region numbers");
-            System.out.println("JMBG is INVALID");
-            System.exit(0);
-
+            validJMBG = false;
         }
 
+        // * control number validation
+        Map<String, Integer> singleDigit = new HashMap<>();
+        List<String> letters = new ArrayList<>(
+                Arrays.asList("A", "B", "V", "G", "D", "Q", "E", "W", "Z", "I", "J", "K"));
+
+        for (int i = 0; i < jmbg.length(); i++) {
+            singleDigit.put(letters.get(i), Integer.parseInt(jmbg.substring(i, i + 1)));
+        }
+
+        int L;
+        int temp = (11 - ((7 * (singleDigit.get("A") + singleDigit.get("E"))
+                + 6 * (singleDigit.get("B") + singleDigit.get("W"))
+                + 5 * (singleDigit.get("V") + singleDigit.get("Z") + 4 * (singleDigit.get("G") + singleDigit.get("I"))
+                        + 3 * (singleDigit.get("D") + singleDigit.get("J"))
+                        + 2 * (singleDigit.get("Q") + singleDigit.get("K"))) % 11)));
+
+        if (temp > 9) {
+            L = 0;
+        } else {
+            L = temp;
+        }
+
+        if (control != L) {
+            validJMBG = false;
+        }
+        // ! Final validation
+        if (!validJMBG) {
+            System.out.println("JMBG is NOT valid!");
+            System.exit(0);
+        } else {
+            System.out.println("JMBG is VALID!");
+
+        }
         // ! ********************************************
         // ! OPTIONAL
 
@@ -93,6 +105,7 @@ public class SimpleJMBGValidator {
         // * ****************************************
         // * assigning region name by region number
         String regionName = "";
+
         if (region < 10)
             regionName = regions.get(0);
         if (region >= 10 && region < 30)
@@ -122,9 +135,6 @@ public class SimpleJMBGValidator {
                         + "sex: " + (sex < 500 ? "male" : "female") + "\n"
                         + "control: " + control + "\n");
 
-        // ! ********************************************
-
-        System.out.println("JMBG is valid!");
         // * Zatvaramo scaner
         scanner.close();
     }
